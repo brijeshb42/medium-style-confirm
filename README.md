@@ -26,3 +26,6 @@ function() {
   alert('Cancelled');
 });
 ```
+
+### Installation
+* Install via bower `bower install medium-style-confirm`.
