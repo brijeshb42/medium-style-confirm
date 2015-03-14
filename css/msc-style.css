@@ -21,6 +21,11 @@
     display: none;
     color: #252525;
     -webkit-font-smoothing: antialiased;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .msc-overlay {
     position: fixed;
@@ -29,7 +34,6 @@
     width: 100%;
     left: 0;
     background-color: #fff;
-    opacity: 0.9;
     z-index: 20;
 }
 
@@ -48,9 +52,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
     font-size: 1.2em;
     text-align: center;
     vertical-align: middle;
@@ -65,9 +69,8 @@
     background: #fff;
     opacity: 1.0;
     max-width: 480px;
-    margin: 0 auto;
+    margin: 10% auto 10% auto;
     text-align: center;
-    padding: 10% 0 0 0;
 }
 
 .msc-title {
@@ -85,6 +88,7 @@
     padding: 10px 20px;
     border-radius: 25px;
     min-width: 80px;
+    background: #fff;
 }
 .msc-action button:focus {
     outline: none;

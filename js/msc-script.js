@@ -51,6 +51,7 @@
         action.appendChild(cancelbtn);
 
         okBtn.addEventListener('click', ok);
+        cancelbtn.addEventListener('click', cancel);
 
         content.appendChild(cTitle);
         content.appendChild(body);
@@ -70,16 +71,16 @@
         }
 
         function ok() {
-            defaults.okFunction.call(undefined, null);
             destroy();
+            defaults.okFunction.call(undefined, null);
         }
 
         function cancel() {
-            defaults.cancelFunction.call(undefined, null);
             destroy();
+            defaults.cancelFunction.call(undefined, null);
         }
     };
 
-    window.msc = MscConfirm;
+    //window.msc = MscConfirm;
     window.mscConfirm = MscConfirm;
 })();

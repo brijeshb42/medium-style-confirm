@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+a, a:visited {
+    color: #08c;
+    text-decoration: none;
+}
+header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+header h1, header h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+header h2 {
+    margin-left: 10px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+code, pre {
+    background: #F2F2F2;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 1.1em;
+}
+.msc-action button {
+    background: #fff;
+    cursor: pointer;
+}
+hr {
+    border: 1px solid #e5e5e5;
+}
+.pull-right {
+    float: right;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+    margin: 0;
+    padding-top: 5px;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "medium-style-confirm",
+  "version": "0.1.0",
+  "homepage": "http://bitwiser.i/medium-style-confirm/",
+  "authors": [
+    "Brijesh Bittu <brijeshb42@gmail.com>"
+  ],
+  "description": "medium style confirm dialog",
+  "main": "js/msc-script.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "medium",
+    "confirm",
+    "dialog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

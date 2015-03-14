@@ -1,30 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Medium Style Confirm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/msc-style.css">
-  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-  <style>
+    <title>Medium Style Confirm | Bitwiser.in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/msc-style.css">
+    <style>
     body {
       font-family: 'Bitter', serif;
+      font-size: 1em;
+      color: #444;
     }
-  </style>
+    </style>
 </head>
 <body>
-  <!-- <div class="msc-confirm">
-    <div class="msc-overlay">
-      <button class="msc-close">&times;</button>
-    </div>
-    <div class="msc-content">
-      <h3 class="msc-title">Delete</h3>
-      <div class="msc-body">Do you want to delete this post?</div>
-      <div class="msc-action">
-        <button class="msc-ok">OK</button>
-        <button class="msc-cancel">Cancel</button>
-      </div>
-    </div>
-  </div> -->
-  <script src="js/msc-script.js"></script>
+    <header>
+        <h1><a href="/">Bitwiser.in</a></h1>
+        <nav class="pull-right">
+            <ul>
+                <li><a href="https://github.com/brijeshb42/medium-style-confirm">github</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <h1><a href="/medium-style-confirm/">medium-style-confirm</a></h1>
+        <div class="demo msc-action">
+            <h3>Demo</h3>
+            <p><button id="demo1">Simplest</button> <code>mscConfirm(title, okCallback)</code></p>
+            <div>
+                <pre>mscConfirm("Delete?",function(){
+  alert("Post deleted");
+});</pre>
+            </div>
+            <hr>
+            <p><button id="demo2">With subheading</button> <code>mscConfirm(title, subheading, okCallback)</code></p>
+            <div>
+                <pre>mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
+  alert("Post deleted");
+});</pre>
+            </div>
+            <hr>
+            <p><button id="demo3">Full API</button> <code>mscConfirm(title, subheading, okCallback, cancelCallback)</code></p>
+            <div>
+                <pre>mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
+  alert("Post deleted");
+},
+function() {
+  alert('Cancelled');
+});</pre>
+            </div>
+            <hr>
+        </div>
+        <div class="usage">
+            <h3>Usage</h3>
+            <ul>
+                <li>Download <a href="/medium-style-confirm/css/msc-style.css" target="_blank">msc-style.css</a> and <a href="/medium-style-confirm/js/msc-sscript.js" target="_blank">msc-script.js</a>.</li>
+                <li>Include <code>msc-style.css</code> in html as <pre>&lt;link rel="stylesheet" href="msc-style.css"&gt;</pre> just before ending <code>head</code> tag.</li>
+                <li>Include <code>msc-script.js</code> in html as <pre>&lt;script src="msc-script.js"&gt;</pre> just before ending <code>body</code> tag.</li>
+                <li>Call the code <code>mscConfirm()</code> function as shown in demo.</li>
+            </ul>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="js/msc-script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var demobtn = document.querySelector("#demo1");
+        demobtn.addEventListener("click", function() {
+          mscConfirm("Delete?",function(){
+            alert("Post deleted");
+          });
+        });
+        var demobtn1 = document.querySelector("#demo2");
+        demobtn1.addEventListener("click", function() {
+          mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
+            alert("Post deleted");
+          });
+        });
+        var demobtn2 = document.querySelector("#demo3");
+        demobtn2.addEventListener("click", function() {
+          mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
+            alert("Post deleted");
+          },
+          function() {
+            alert('Cancelled');
+          });
+        });
+    });
+    </script>
 </body>
 </html>
