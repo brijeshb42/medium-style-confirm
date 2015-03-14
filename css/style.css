@@ -34,6 +34,10 @@ code, pre {
     padding: 2px 4px;
     font-size: 1.1em;
 }
+pre {
+    width: 99%;
+    overflow-x: scroll;
+}
 .msc-action button {
     background: #fff;
     cursor: pointer;
