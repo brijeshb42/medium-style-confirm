@@ -1,0 +1,103 @@
+@-webkit-keyframes scale-fade{
+    0%{opacity:0;-webkit-transform:scale(.8) rotateX(-40deg);transform:scale(.8) rotateX(-40deg)}
+    50%{opacity:1}70%{-webkit-transform:scale(1.05) rotateX(0);transform:scale(1.05) rotateX(0)}
+    100%{-webkit-transform:scale(1) rotateX(0);transform:scale(1) rotateX(0)}
+}
+@keyframes scale-fade{
+    0%{opacity:0;-webkit-transform:scale(.8) rotateX(-40deg);transform:scale(.8) rotateX(-40deg)}
+    50%{opacity:1}70%{-webkit-transform:scale(1.05) rotateX(0);transform:scale(1.05) rotateX(0)}
+    100%{-webkit-transform:scale(1) rotateX(0);transform:scale(1) rotateX(0)}
+}
+
+.msc-confirm--animate {
+    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    transform-origin: bottom center;
+    -webkit-animation: scale-fade 300ms forwards cubic-bezier(.8, .02, .45, -1.09);
+    animation: scale-fade 300ms forwards cubic-bezier(.8, .02, .45, .91);
+}
+
+.msc-confirm {
+    display: none;
+    color: #252525;
+    -webkit-font-smoothing: antialiased;
+}
+.msc-overlay {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.9;
+    z-index: 20;
+}
+
+.msc-confirm button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.msc-confirm button:focus {
+    outline: none;
+}
+
+.msc-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    vertical-align: middle;
+}
+.msc-close:hover {
+    background: #eee;
+}
+
+.msc-content {
+    position: relative;
+    z-index: 21;
+    background: #fff;
+    opacity: 1.0;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10% 0 0 0;
+}
+
+.msc-title {
+    font-size: 2em;
+    margin: 0 0 0.1em 0;
+}
+.msc-body {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: #666;
+}
+
+.msc-action button {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    min-width: 80px;
+}
+.msc-action button:focus {
+    outline: none;
+}
+.msc-ok {
+    margin-right: 10px;
+}
+button.msc-ok:hover, button.msc-ok:focus {
+    border: 1px solid #0F985A;
+    color: #0F985A;
+}
+button.msc-cancel:hover, button.msc-cancel:focus {
+    border: 1px solid #111;
+    color: #111;
+}
+
