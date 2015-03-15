@@ -28,4 +28,10 @@ function() {
 ```
 
 ### Installation
-* Install via bower `bower install medium-style-confirm`.
+* Install via bower `bower install medium-style-confirm` or download [msc-style.css](http://bitwiser.in/medium-style-confirm/css/msc-style.css) and [msc-script.js](http://bitwiser.in/medium-style-confirm/js/msc-script.js).
+* Include `msc-style.css` in html as `<link rel="stylesheet" href="msc-style.css">` just before ending `head` tag.
+* Include `msc-script.js` in html as `<script src="msc-script.js">` just before ending `body` tag.
+* Call the `mscConfirm()` function as shown above.
+
+### LICENSE
+#### MIT
