@@ -77,12 +77,16 @@
 
         function ok() {
             destroy();
-            defaults.okFunction.call(undefined, null);
+            if(defaults.okFunction !== null) {
+                defaults.okFunction.call(undefined, null);
+            }
         }
 
         function cancel() {
             destroy();
-            defaults.cancelFunction.call(undefined, null);
+            if(defaults.cancelFunction !== null) {
+                defaults.cancelFunction.call(undefined, null);
+            }
         }
 
         function _hide(e) {
