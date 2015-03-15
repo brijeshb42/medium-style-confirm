@@ -1,12 +1,12 @@
 {
   "name": "medium-style-confirm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://bitwiser.i/medium-style-confirm/",
   "authors": [
     "Brijesh Bittu <brijeshb42@gmail.com>"
   ],
   "description": "medium style confirm dialog",
-  "main": "js/msc-script.js",
+  "main": ["js/msc-script.js", "css/msc-style.css"],
   "moduleType": [
     "globals"
   ],

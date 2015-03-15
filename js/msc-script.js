@@ -9,6 +9,7 @@
         ele.appendChild(tn);
         return ele;
     }
+    var KEY_ESC = 27;
 
     var MscConfirm = function(title, sub, okFunction, cancelFunction) {
         var prev = document.querySelector('.msc-confirm');
@@ -62,11 +63,15 @@
         document.body.appendChild(dialog);
         dialog.style.display = 'block';
         dialog.classList.add('msc-confirm--animate');
+        cancelbtn.focus();
+
+        document.addEventListener('keyup', _hide);
 
         function destroy() {
             closeBtn.removeEventListener('click', destroy);
             okBtn.removeEventListener('click', ok);
             cancelbtn.removeEventListener('click', cancel);
+            document.removeEventListener('keyup', _hide);
             document.body.removeChild(dialog);
         }
 
@@ -78,6 +83,12 @@
         function cancel() {
             destroy();
             defaults.cancelFunction.call(undefined, null);
+        }
+
+        function _hide(e) {
+            if(e.keyCode == 27) {
+                destroy();
+            }
         }
     };
 
