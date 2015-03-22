@@ -40,20 +40,41 @@
 });</pre>
             </div>
             <hr>
-            <p><button id="demo2">With subheading</button> <code>mscConfirm(title, subheading, okCallback)</code></p>
+            <p><button id="demo2">With subtitle</button> <code>mscConfirm(title, subtitle, okCallback)</code></p>
             <div>
                 <pre>mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
   alert("Post deleted");
 });</pre>
             </div>
             <hr>
-            <p><button id="demo3">Full API</button> <code>mscConfirm(title, subheading, okCallback, cancelCallback)</code></p>
+            <p><button id="demo3">All arguments</button> <code>mscConfirm(title, subtitle, okCallback, cancelCallback)</code></p>
             <div>
                 <pre>mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
   alert("Post deleted");
 },
 function() {
   alert('Cancelled');
+});</pre>
+            </div>
+            <hr>
+            <p><button id="demo4">As an object</button> <code>mscConfirm(object)</code></p>
+            <div>
+                <pre>mscConfirm({
+  title: 'License',
+
+  subtitle: 'Do you accept the licese agreement?',  // default: ''
+
+  okText: 'I Agree',    // default: OK
+
+  cancelText: 'I Dont', // default: Cancel
+
+  onOk: function() {
+    alert('Awesome.');
+  },
+
+  onCancel: function() {
+    alert('Sad face :( .');
+  }
 });</pre>
             </div>
             <hr>
@@ -105,6 +126,21 @@ function() {
           },
           function() {
             alert('Cancelled');
+          });
+        });
+        var demobtn3 = document.querySelector("#demo4");
+        demobtn3.addEventListener("click", function() {
+          mscConfirm({
+            title: 'License',
+            subtitle: 'Do you accept the licese agreement?',
+            okText: 'I Agree',
+            cancelText: 'I Dont',
+            onOk: function() {
+                alert('Awesome.');
+            },
+            onCancel: function() {
+                alert('Sad face :( .');
+            }
           });
         });
     });

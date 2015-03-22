@@ -3,6 +3,24 @@
 ### Demo @ [bitwiser.in](http://bitwiser.in/medium-style-confirm/)
 
 ### Usage
+
+#### New
+* `mscConfirm(object)` :
+```js
+mscConfirm({
+    title: 'License',
+    subtitle: 'Do you accept the licese agreement?',    // default: ''
+    okText: 'I Agree',      // default: OK
+    cancelText: 'I Dont',   // default: Cancel
+    onOk: function() {
+        alert('Awesome.');
+    },
+    onCancel: function() {
+        alert('Sad face :( .');
+    }
+});
+```
+
 * `mscConfirm(title, okCallback)` :
 ```js
 mscConfirm("Delete?",function(){

@@ -11,26 +11,34 @@
     }
     var KEY_ESC = 27;
 
-    var MscConfirm = function(title, sub, okFunction, cancelFunction) {
-        var prev = document.querySelector('.msc-confirm');
-        if(prev !== null){
-            document.body.removeChild(prev);
+    var MscConfirm = function(title, sub, onOk, onCancel) {
+        var prev = document.getElementsByClassName('msc-confirm');
+        if(prev.length > 0){
+            document.body.removeChild(prev[0]);
         }
 
-        var defaults = {
+        var options = {
             title: 'Confirm',
             subtitle: '',
-            okFunction: null,
-            cancelFunction: null
+            onOk: null,
+            onCancel: null,
+            okText: 'OK',
+            cancelText: 'Cancel'
         };
 
-        defaults.title = (typeof title === 'string') ? title : defaults.title;
-        defaults.subtitle = (typeof sub === 'string') ? sub : defaults.subtitle;
-        defaults.okFunction = (typeof okFunction === 'function') ? okFunction : defaults.okFunction;
-        defaults.cancelFunction = (typeof cancelFunction === 'function') ? cancelFunction : defaults.cancelFunction;
+        if(typeof title === 'object') {
+            for(var key in title) {
+                options[key] = title[key];
+            }
+        } else {
+            options.title = (typeof title === 'string') ? title : options.title;
+            options.subtitle = (typeof sub === 'string') ? sub : options.subtitle;
+            options.onOk = (typeof onOk === 'function') ? onOk : options.onOk;
+            options.onCancel = (typeof onCancel === 'function') ? onCancel : options.onCancel;
 
-        if(typeof sub === 'function'){
-            defaults.okFunction = sub;
+            if(typeof sub === 'function') {
+                options.onOk = sub;
+            }
         }
 
         var dialog = ce('div', 'msc-confirm'),
@@ -42,11 +50,11 @@
         closeBtn.addEventListener('click', destroy);
 
         var content = ce('div', 'msc-content'),
-            cTitle = ce('h3', 'msc-title', defaults.title),
-            body = ce('div', 'msc-body', defaults.subtitle),
+            cTitle = ce('h3', 'msc-title', options.title),
+            body = ce('div', 'msc-body', options.subtitle),
             action = ce('div', 'msc-action'),
-            okBtn = ce('button', 'msc-ok', 'OK'),
-            cancelbtn = ce('button', 'msc-cancel', 'Cancel');
+            okBtn = ce('button', 'msc-ok', options.okText),
+            cancelbtn = ce('button', 'msc-cancel', options.cancelText);
 
         action.appendChild(okBtn);
         action.appendChild(cancelbtn);
@@ -77,15 +85,15 @@
 
         function ok() {
             destroy();
-            if(defaults.okFunction !== null) {
-                defaults.okFunction.call(undefined, null);
+            if(options.onOk !== null) {
+                options.onOk();
             }
         }
 
         function cancel() {
             destroy();
-            if(defaults.cancelFunction !== null) {
-                defaults.cancelFunction.call(undefined, null);
+            if(options.onCancel !== null) {
+                options.onCancel();
             }
         }
 
