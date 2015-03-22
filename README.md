@@ -4,23 +4,6 @@
 
 ### Usage
 
-#### New
-* `mscConfirm(object)` :
-```js
-mscConfirm({
-    title: 'License',
-    subtitle: 'Do you accept the licese agreement?',    // default: ''
-    okText: 'I Agree',      // default: OK
-    cancelText: 'I Dont',   // default: Cancel
-    onOk: function() {
-        alert('Awesome.');
-    },
-    onCancel: function() {
-        alert('Sad face :( .');
-    }
-});
-```
-
 * `mscConfirm(title, okCallback)` :
 ```js
 mscConfirm("Delete?",function(){
@@ -42,6 +25,23 @@ mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
 },
 function() {
   alert('Cancelled');
+});
+```
+
+#### New
+* `mscConfirm(object)` :
+```js
+mscConfirm({
+    title: 'License',
+    subtitle: 'Do you accept the licese agreement?',    // default: ''
+    okText: 'I Agree',      // default: OK
+    cancelText: 'I Dont',   // default: Cancel
+    onOk: function() {
+        alert('Awesome.');
+    },
+    onCancel: function() {
+        alert('Sad face :( .');
+    }
 });
 ```
 
