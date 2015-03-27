@@ -70,7 +70,7 @@
         dialog.appendChild(content);
         document.body.appendChild(dialog);
         dialog.style.display = 'block';
-        dialog.classList.add('msc-confirm--animate');
+        content.classList.add('msc-confirm--animate');
         cancelbtn.focus();
 
         document.addEventListener('keyup', _hide);

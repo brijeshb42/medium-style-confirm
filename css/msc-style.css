@@ -32,6 +32,7 @@
     top: 0;
     height: 100%;
     width: 100%;
+    opacity: 0.9;
     left: 0;
     background-color: #fff;
     z-index: 20;
@@ -70,7 +71,19 @@
     opacity: 1.0;
     max-width: 480px;
     margin: 10% auto 10% auto;
+    padding: 40px;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+  .msc-content {
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .msc-content {
+    padding: 0px;
+  }
 }
 
 .msc-title {
