@@ -77,12 +77,7 @@
 
 @media (max-width: 600px) {
   .msc-content {
-    padding: 10px;
-  }
-}
-@media (max-width: 600px) {
-  .msc-content {
-    padding: 0px;
+    padding: 10px 0;
   }
 }
 
