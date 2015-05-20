@@ -10,8 +10,9 @@
         return ele;
     }
     var KEY_ESC = 27;
+    var KEY_ENTER = 13;
 
-    var MscConfirm = function(title, sub, onOk, onCancel) {
+    function buildUI(title, sub, onOk, onCancel, type) {
         var prev = document.getElementsByClassName('msc-confirm');
         if(prev.length > 0){
             document.body.removeChild(prev[0]);
@@ -29,6 +30,12 @@
         if(typeof title === 'object') {
             for(var key in title) {
                 options[key] = title[key];
+            }
+            if(typeof options.onOk !== 'function') {
+                options.onOk = null;
+            }
+            if(typeof options.onCancel !== 'function') {
+                options.onCancel = null;
             }
         } else {
             options.title = (typeof title === 'string') ? title : options.title;
@@ -51,10 +58,13 @@
 
         var content = ce('div', 'msc-content'),
             cTitle = ce('h3', 'msc-title', options.title),
-            body = ce('div', 'msc-body', options.subtitle),
+            body = ce('div', 'msc-body'),
             action = ce('div', 'msc-action'),
             okBtn = ce('button', 'msc-ok', options.okText),
-            cancelbtn = ce('button', 'msc-cancel', options.cancelText);
+            cancelbtn = ce('button', 'msc-cancel', options.cancelText),
+            input = ce('input', 'msc-input');
+
+        body.appendChild(ce('p','', options.subtitle));
 
         action.appendChild(okBtn);
         action.appendChild(cancelbtn);
@@ -71,7 +81,18 @@
         document.body.appendChild(dialog);
         dialog.style.display = 'block';
         content.classList.add('msc-confirm--animate');
-        cancelbtn.focus();
+        if(type === "prompt") {
+            input.setAttribute("type", "text");
+            input.addEventListener("keyup", function(e) {
+                if(e.keyCode === KEY_ENTER) {
+                    ok();
+                }
+            });
+            body.appendChild(input);
+            input.focus();
+        }else {
+            cancelbtn.focus();
+        }
 
         document.addEventListener('keyup', _hide);
 
@@ -86,7 +107,11 @@
         function ok() {
             destroy();
             if(options.onOk !== null) {
-                options.onOk();
+                if(type === "prompt") {
+                    options.onOk(input.value);
+                }else {
+                    options.onOk();
+                }
             }
         }
 
@@ -103,7 +128,11 @@
             }
         }
     };
-
     //window.msc = MscConfirm;
-    window.mscConfirm = MscConfirm;
+    window.mscConfirm = function(title, sub, onOk, onCancel) {
+        buildUI(title, sub, onOk, onCancel, "confirm");
+    };
+    window.mscPrompt = function(title, sub, onOk, onCancel) {
+        buildUI(title, sub, onOk, onCancel, "prompt");
+    };
 })();

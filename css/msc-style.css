@@ -95,6 +95,30 @@
     margin-bottom: 1em;
     color: #666;
 }
+.msc-body p {
+    margin: 0 0 10px 0;
+}
+
+.msc-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding: 0 15px;
+}
+
+.msc-input:focus {
+    outline: none;
+    border-color: #0F985A;
+}
+
 
 .msc-action button {
     border: 1px solid #ccc;
