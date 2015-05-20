@@ -68,10 +68,12 @@
         body.appendChild(ce('p','', options.subtitle));
 
         action.appendChild(okBtn);
-        action.appendChild(cancelbtn);
+        if(type !== "alert") {
+            action.appendChild(cancelbtn);
+            cancelbtn.addEventListener('click', cancel);
+        }
 
         okBtn.addEventListener('click', ok);
-        cancelbtn.addEventListener('click', cancel);
 
         content.appendChild(cTitle);
         content.appendChild(body);
@@ -136,5 +138,8 @@
     };
     window.mscPrompt = function(title, sub, onOk, onCancel) {
         buildUI(title, sub, onOk, onCancel, "prompt");
+    };
+    window.mscAlert = function(title, sub, onOk, onCancel) {
+        buildUI(title, sub, onOk, onCancel, "alert");
     };
 })();
