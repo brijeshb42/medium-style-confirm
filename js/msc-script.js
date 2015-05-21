@@ -25,7 +25,8 @@
             onCancel: null,
             okText: 'OK',
             cancelText: 'Cancel',
-            placeholder: 'Enter value'
+            placeholder: 'Enter value',
+            dismissOverlay: false
         };
 
         if(typeof title === 'object') {
@@ -54,6 +55,10 @@
             closeBtn = ce('button', 'msc-close');
         closeBtn.innerHTML = '&times;';
         overlay.appendChild(closeBtn);
+
+        if(options.dismissOverlay) {
+            overlay.addEventListener("click", destroy);
+        }
 
         closeBtn.addEventListener('click', destroy);
 
@@ -104,6 +109,9 @@
             closeBtn.removeEventListener('click', destroy);
             okBtn.removeEventListener('click', ok);
             cancelbtn.removeEventListener('click', cancel);
+            if(options.dismissOverlay) {
+                overlay.removeEventListener("click", destroy);
+            }
             document.removeEventListener('keyup', _hide);
             document.body.removeChild(dialog);
         }
