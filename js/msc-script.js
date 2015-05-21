@@ -99,6 +99,8 @@
             });
             body.appendChild(input);
             input.focus();
+        }else if(type==="alert") {
+            okBtn.focus();
         }else {
             cancelbtn.focus();
         }
