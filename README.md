@@ -56,7 +56,7 @@ mscPrompt({
     okText: 'Subscribe',      // default: OK
     cancelText: 'Cancel',   // default: Cancel
     dismissOverlay: true,   // default: false, closes dialog when clicked on overlay.
-    placeholder: 'Enter your email'
+    placeholder: 'Enter your email',     // placeholder value to show in input textbox
     onOk: function(value) {
         mscAlert(value+ " has been subscribed to the newsletter.");
     },
