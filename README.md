@@ -46,6 +46,7 @@ mscConfirm({
 ```
 
 #### New
+### Prompt -> Equivalent of JS `prompt()`
 ##### The API for `mscPrompt` and `mscConfirm` is same. Just the `onOk` callback of prompt receives a `value` parameter entered into the prompt.
 * `mscPrompt(object)` :
 ```js
@@ -65,7 +66,8 @@ mscPrompt({
 });
 ```
 
-* `mscPrompt(object)` :
+### Alert -> Equivalent of JS `alert()`
+* `mscAlert(object)` :
 ```js
 mscAlert("Hello World.");
 ```
