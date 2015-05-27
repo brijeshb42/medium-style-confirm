@@ -28,7 +28,6 @@ function() {
 });
 ```
 
-#### New
 * `mscConfirm(object)` :
 ```js
 mscConfirm({
@@ -36,6 +35,7 @@ mscConfirm({
     subtitle: 'Do you accept the licese agreement?',    // default: ''
     okText: 'I Agree',      // default: OK
     cancelText: 'I Dont',   // default: Cancel
+    dismissOverlay: true,   // default: false, closes dialog when clicked on overlay.
     onOk: function() {
         alert('Awesome.');
     },
@@ -43,6 +43,31 @@ mscConfirm({
         alert('Sad face :( .');
     }
 });
+```
+
+#### New
+##### The API for prompt and confirm is same. Just the `onOk` callback of prompt receives a value input into the prompt.
+* `mscPrompt(object)` :
+```js
+mscPrompt({
+    title: 'Subscribe',
+    subtitle: 'Enter your email to subscribe to the newsletter.',    // default: ''
+    okText: 'Subscribe',      // default: OK
+    cancelText: 'Cancel',   // default: Cancel
+    dismissOverlay: true,   // default: false, closes dialog when clicked on overlay.
+    placeholder: 'Enter your email'
+    onOk: function(value) {
+        mscAlert(value+ " has been subscribed to the newsletter.");
+    },
+    onCancel: function() {
+        mscAlert('Sad face :( .');
+    }
+});
+```
+
+* `mscPrompt(object)` :
+```js
+mscAlert("Hello World.");
 ```
 
 ### Installation
