@@ -160,22 +160,22 @@ function() {
         var demobtn = document.querySelector("#demo1");
         demobtn.addEventListener("click", function() {
           mscConfirm("Delete?",function(){
-            alert("Post deleted");
+            mscAlert("Post deleted");
           });
         });
         var demobtn1 = document.querySelector("#demo2");
         demobtn1.addEventListener("click", function() {
           mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
-            alert("Post deleted");
+            mscAlert("Post deleted");
           });
         });
         var demobtn2 = document.querySelector("#demo3");
         demobtn2.addEventListener("click", function() {
           mscConfirm("Delete", "Are you sure you want to delete this post?", function(){
-            alert("Post deleted");
+            mscAlert("Post deleted");
           },
           function() {
-            alert('Cancelled');
+            mscAlert('Cancelled');
           });
         });
         var demobtn3 = document.querySelector("#demo4");
