@@ -36,6 +36,7 @@
                 <a href="https://twitter.com/share" class="twitter-share-button" data-text="medium.com style confirm dialog" data-via="brijeshb42" data-count="none">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             </div>
+            <h3>All three: <code>mscAlert</code>,<code>mscPrompt</code> and <code>mscConfirm</code> support similar APIs as shown for <code>mscConfirm</code></h3>
             <h2>Demo</h2>
             <p><button id="demo1">Simplest</button> <code>mscConfirm(title, okCallback)</code></p>
             <div>
@@ -70,7 +71,9 @@ function() {
 
   okText: 'I Agree',    // default: OK
 
-  cancelText: 'I Dont', // default: Cancel
+  cancelText: 'I Dont', // default: Cancel,
+
+  dismissOverlay: true, // default: false, closes dialog box when clicked on overlay.
 
   onOk: function() {
     alert('Awesome.');
@@ -82,8 +85,50 @@ function() {
 });</pre>
             </div>
             <hr>
+            <h2>mscPrompt</h2>
+            <p><button id="demo5">As an object</button> <code>mscPrompt(object)</code></p>
+            <div>
+                <pre>mscPrompt({
+  title: 'Subscribe',
+
+  subtitle: 'Enter your email to subscribe to the newsletter',  // default: ''
+
+  okText: 'Subscribe',    // default: OK
+
+  cancelText: 'Cancel', // default: Cancel,
+
+  placeholder: 'Your email here', // default: empty, placeholder for input text box
+
+  onOk: function(val) {
+    mscAlert("Your email: "+val+" has subscribed to the newsletter.");
+  },
+
+  onCancel: function() {
+    mscAlert(":( You cancelled on me.");
+  }
+});</pre>
+            </div>
+            <hr>
+            <h2>mscAlert</h2>
+            <p><button id="demo6">Simplest</button> <code>mscAlert(title)</code></p>
+            <div>
+                <pre>mscAlert("Hello World");</pre>
+            </div>
+            <p><button id="demo7">As an object</button> <code>mscAlert(object)</code></p>
+            <div>
+                <pre>mscAlert({
+  title: 'Done',
+
+  subtitle: 'You have subscribed to the mailing list.',  // default: ''
+
+  okText: 'Close',    // default: OK
+
+});</pre>
+            </div>
+            <hr>
         </div>
         <div class="usage">
+            <h3>All three: <code>mscAlert</code>,<code>mscPrompt</code> and <code>mscConfirm</code> support similar APIs as shown for <code>mscConfirm</code></h3>
             <h2>Usage</h2>
             <ul>
                 <li>Install via bower: <code>bower install medium-style-confirm</code>.</li>
@@ -94,7 +139,7 @@ function() {
                 <li>Download <a href="/medium-style-confirm/css/msc-style.css" target="_blank">msc-style.css</a> and <a href="/medium-style-confirm/js/msc-script.js" target="_blank">msc-script.js</a>.</li>
                 <li>Include <code>msc-style.css</code> in html as <pre>&lt;link rel="stylesheet" href="msc-style.css"&gt;</pre> just before ending <code>head</code> tag.</li>
                 <li>Include <code>msc-script.js</code> in html as <pre>&lt;script src="msc-script.js"&gt;</pre> just before ending <code>body</code> tag.</li>
-                <li>Call the code <code>mscConfirm()</code> function as shown in demo.</li>
+                <li>Call the code <code>mscConfirm(), mscAlert() or mscPrompt()</code> function as shown in demo.</li>
             </ul>
         </div>
     </section>
@@ -140,6 +185,7 @@ function() {
             subtitle: 'Do you accept the licese agreement?',
             okText: 'I Agree',
             cancelText: 'I Dont',
+            dismissOverlay: true,
             onOk: function() {
                 alert('Awesome.');
             },
@@ -147,6 +193,38 @@ function() {
                 alert('Sad face :( .');
             }
           });
+        });
+        var demobtn4 = document.querySelector("#demo5");
+        demobtn4.addEventListener("click", function() {
+            mscPrompt({
+                title: 'Subscribe',
+                subtitle: 'Enter your email to subscribe to the newsletter',
+                placeholder: 'Your email here', // default: empty, placeholder for input text box
+                okText: 'Subscribe',    // default: OK
+                cancelText: 'Cancel', // default: Cancel
+                onOk: function(val) {
+                    mscAlert({
+                        title: "Done",
+                        subtitle: "Your email: "+val+" has subscribed to the newsletter."
+                    });
+                },
+                onCancel: function() {
+                    mscAlert(":( You cancelled on me.");
+                }
+            });
+        });
+        var demobtn5 = document.querySelector("#demo7");
+        demobtn5.addEventListener("click", function() {
+            mscAlert({
+                title: 'Done',
+                subtitle: 'You have subscribed to the mailing list.',  // default: ''
+                okText: 'Close',    // default: OK
+                dismissOverlay: true
+            });
+        });
+        var demobtn6 = document.querySelector("#demo6");
+        demobtn6.addEventListener("click", function() {
+            mscAlert("Hello world");
         });
     });
     var disqus_shortname = 'bitwiser'; // required: replace example with your forum shortname
