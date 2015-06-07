@@ -70,7 +70,7 @@
             cancelbtn = ce('button', 'msc-cancel', options.cancelText),
             input = ce('input', 'msc-input');
 
-        body.appendChild(ce('p','', options.subtitle));
+        body.appendChild(ce('p','msc-sub', options.subtitle));
 
         action.appendChild(okBtn);
         if(type !== "alert") {

@@ -125,8 +125,19 @@ function() {
 
 });</pre>
             </div>
-            <hr>
+            <p><button id="demo8">With new lines and carriage returns</button> <code>mscAlert(object)</code></p>
+            <div>
+                <pre>mscAlert({
+  title: 'Done',
+
+  subtitle: 'You have been registered successfully. \n Your reg. ID is 4321',  // default: ''
+
+  okText: 'Close',    // default: OK
+
+});</pre>
+            </div>
         </div>
+        <hr>
         <div class="usage">
             <h3>All three: <code>mscAlert</code>,<code>mscPrompt</code> and <code>mscConfirm</code> support similar APIs as shown for <code>mscConfirm</code></h3>
             <h2>Usage</h2>
@@ -225,6 +236,18 @@ function() {
         var demobtn6 = document.querySelector("#demo6");
         demobtn6.addEventListener("click", function() {
             mscAlert("Hello world");
+        });
+
+        var demobtn7 = document.querySelector("#demo8");
+        demobtn7.addEventListener('click', function() {
+            mscAlert({
+              title: 'Done',
+
+              subtitle: 'You have been registered successfully. \n Your reg. ID is 4321', // default: ''
+
+              okText: 'Close',    // default: OK
+
+            });
         });
     });
     var disqus_shortname = 'bitwiser'; // required: replace example with your forum shortname
