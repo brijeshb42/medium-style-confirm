@@ -72,7 +72,7 @@ mscPrompt({
 mscAlert("Hello World.");
 ```
 
-# Added support for new lines and carriage return in mscAlert()
+##### Added support for new lines and carriage return in mscAlert()
 * `mscAlert(object)` :
 ```js
 mscAlert({
