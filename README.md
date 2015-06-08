@@ -72,6 +72,19 @@ mscPrompt({
 mscAlert("Hello World.");
 ```
 
+##### Added support for new lines and carriage return in mscAlert()
+* `mscAlert(object)` :
+```js
+mscAlert({
+  title: 'Done',
+
+  subtitle: 'You have been registered successfully. \n Your reg. ID is 4321', // default: ''
+
+  okText: 'Close',    // default: OK
+
+});
+```
+
 ### Installation
 * Install via bower `bower install medium-style-confirm` or download [msc-style.css](http://bitwiser.in/medium-style-confirm/css/msc-style.css) and [msc-script.js](http://bitwiser.in/medium-style-confirm/js/msc-script.js).
 * Include `msc-style.css` in html as `<link rel="stylesheet" href="msc-style.css">` just before ending `head` tag.

@@ -137,3 +137,7 @@ button.msc-cancel:hover, button.msc-cancel:focus {
     color: #111;
 }
 
+.msc-sub{
+    white-space: pre-line;
+}
+
