@@ -67,7 +67,7 @@ mscPrompt({
 ```
 
 ### Alert -> Equivalent of JS `alert()`
-* `mscAlert(object)` :
+* `mscAlert(text)` :
 ```js
 mscAlert("Hello World.");
 ```
