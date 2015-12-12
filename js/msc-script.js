@@ -26,7 +26,8 @@
             okText: 'OK',
             cancelText: 'Cancel',
             placeholder: 'Enter value',
-            dismissOverlay: false
+            dismissOverlay: false,
+            defaultValue: ''
         };
 
         if(typeof title === 'object') {
@@ -92,6 +93,7 @@
         if(type === "prompt") {
             input.setAttribute("type", "text");
             input.setAttribute("placeholder", options.placeholder);
+            input.value = options.defaultValue;
             input.addEventListener("keyup", function(e) {
                 if(e.keyCode === KEY_ENTER) {
                     ok();

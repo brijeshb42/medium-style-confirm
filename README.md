@@ -52,8 +52,9 @@ mscConfirm({
 ```js
 mscPrompt({
     title: 'Subscribe',
-    subtitle: 'Enter your email to subscribe to the newsletter.',    // default: ''
-    okText: 'Subscribe',      // default: OK
+    subtitle: 'Enter your email to subscribe to the newsletter.',    // default: '',
+    defaultValue: 'email',  // default: '', this value will be prefilled in the prompt box  
+    okText: 'Subscribe',    // default: OK
     cancelText: 'Cancel',   // default: Cancel
     dismissOverlay: true,   // default: false, closes dialog when clicked on overlay.
     placeholder: 'Enter your email',     // placeholder value to show in input textbox
