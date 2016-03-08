@@ -155,5 +155,10 @@
         buildUI(title, sub, onOk, onCancel, "alert");
     };
     window.msc = {};
-    window.msc.close = destroy;
+    window.msc.close = function() {
+        var prev = document.getElementsByClassName('msc-confirm');
+        if(prev.length > 0){
+            document.body.removeChild(prev[0]);
+        }
+    };
 })();
