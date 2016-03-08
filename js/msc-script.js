@@ -154,4 +154,6 @@
     window.mscAlert = function(title, sub, onOk, onCancel) {
         buildUI(title, sub, onOk, onCancel, "alert");
     };
+    window.msc = {};
+    window.msc.close = destroy;
 })();
