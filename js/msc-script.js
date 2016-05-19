@@ -172,5 +172,16 @@
             buildUI(title, sub, onOk, onCancel, "alert");
         }
     };
+<<<<<<< HEAD
     return exportData;
 }));
+=======
+    window.msc = {};
+    window.msc.close = function() {
+        var prev = document.getElementsByClassName('msc-confirm');
+        if(prev.length > 0){
+            document.body.removeChild(prev[0]);
+        }
+    };
+})();
+>>>>>>> 7bc940df9d620bdf04b3f0130f6bdbaf63bb5a7e
