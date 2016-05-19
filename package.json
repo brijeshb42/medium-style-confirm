@@ -1,6 +1,6 @@
 {
   "name": "medium-style-confirm",
-  "version": "0.4.4",
+  "version": "0.4.6",
   "description": "A medium.com like modal dialog UI library.",
   "main": "js/msc-script.js",
   "repository": {
