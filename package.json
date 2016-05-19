@@ -1,0 +1,17 @@
+{
+  "name": "medium-style-confirm",
+  "version": "0.4.4",
+  "description": "A medium.com like modal dialog UI library.",
+  "main": "js/msc-script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brijeshb42/medium-style-confirm.git"
+  },
+  "keywords": ["medium", "dialog", "alert", "prompt"],
+  "author": "Brijesh Bittu <brijeshb42@gmail.com> (http://bitwiser.in/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brijeshb42/medium-style-confirm/issues"
+  },
+  "homepage": "https://github.com/brijeshb42/medium-style-confirm#readme"
+}
