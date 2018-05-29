@@ -43,6 +43,7 @@
             cancelText: 'Cancel',
             placeholder: 'Enter value',
             dismissOverlay: false,
+            closeOnEscape: true,
             defaultValue: ''
         };
 
@@ -155,7 +156,7 @@
         }
 
         function _hide(e) {
-            if(e.keyCode == 27) {
+            if(options.closeOnEscape && e.keyCode == KEY_ESC) {
                 destroy();
             }
         }
